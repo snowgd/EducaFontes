@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EducaFontes - Fontes Confiáveis para Ensino</title>
+    <style>
+        /* Reset e Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .slogan {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Navegação */
+        nav {
+            background-color: #34495e;
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #2c3e50;
+        }
+        
+        /* Conteúdo Principal */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            flex: 1;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            color: #3498db;
+            margin: 2rem 0 1rem;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Página Inicial */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        /* Seções de Matérias */
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 colunas lado a lado */
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .subject-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .subject-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .resource-list {
+            list-style: none;
+        }
+        
+        .resource-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .resource-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #3498db;
+        }
+        
+        .resource-list a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .resource-list a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        /* Botão Voltar */
+        .back-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .subject-grid, .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Esconder seções inicialmente */
+        .subject-section {
+            display: none;
+        }
+
+        /* Mostrar introdução */
+        .intro-section {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">EducaFontes</div>
+        <div class="slogan">Fontes confiáveis para seu aprendizado</div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#" class="nav-link" data-section="intro">Início</a></li>
+            <li><a href="#" class="nav-link" data-section="matematica">Matemática</a></li>
+            <li><a href="#" class="nav-link" data-section="portugues">Português</a></li>
+            <li><a href="#" class="nav-link" data-section="fisica">Física</a></li>
+            <li><a href="#" class="nav-link" data-section="geografia">Geografia</a></li>
+            <li><a href="#" class="nav-link" data-section="historia">História</a></li>
+            <li><a href="#" class="nav-link" data-section="ciencias">Ciências</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section class="intro-section">
+            <div class="intro">
+                <h1>Encontre fontes confiáveis para suas matérias escolares</h1>
+                <p>Selecionamos cuidadosamente os melhores recursos educacionais online para ajudar em seus estudos. Todas as fontes são verificadas por especialistas em educação.</p>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Recursos Verificados</h3>
+                    <p>Todos os materiais são avaliados por professores e especialistas em educação antes de serem recomendados.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Organizado por Matérias</h3>
+                    <p>Conteúdo categorizado por disciplinas e níveis de ensino para facilitar sua busca.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Atualizações Constantes</h3>
+                    <p>Nossa equipe mantém o site sempre atualizado com os melhores recursos disponíveis.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="matematica" class="subject-section">
+            <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <h2>Matemática</h2>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <h3>Ensino Fundamental</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.khanacademy.org/math/pt-br-matematica" target="_blank">Khan Academy (Matemática)</a></li>
+                        <li><a href="https://matematica.obmep.org.br/" target="_blank">Portal da Matemática OBMEP</a></li>
+                        <li><a href="https://www.somatematica.com.br/" target="_blank">Só Matemática</a></li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>Ensino Médio</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.curso-positivo.com.br/" target="_blank">Curso Positivo</a></li>
+                        <li><a href="https://www.ime.usp.br/" target="_blank">Instituto de Matemática USP</a></li>
+                        <li><a href="https://www.youtube.com/c/MatemáticaRio" target="_blank">Matemática Rio (YouTube)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>Vestibular e ENEM</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.estudavest.com.br/matematica/" target="_blank">EstudaVest Matemática</a></li>
+                        <li><a href="https://www.youtube.com/c/FerrettoMatemática" target="_blank">Ferretto Matemática (YouTube)</a></li>
+                        <li><a href="https://www.matematica.uff.br/" target="_blank">Matemática UFF</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="portugues" class="subject-section">
+            <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <h2>Português</h2>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <h3>Gramática e Redação</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.normaculta.com.br/" target="_blank">Norma Culta</a></li>
+                        <li><a href="https://www.soportugues.com.br/" target="_blank">Só Português</a></li>
+                        <li><a href="https://www.portugues.com.br/" target="_blank">Português.com.br</a></li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>Literatura</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.dominiopublico.gov.br/" target="_blank">Domínio Público</a></li>
+                        <li><a href="https://www.literaturabrasileira.ufsc.br/" target="_blank">Literatura Brasileira UFSC</a></li>
+                        <li><a href="https://www.academia.org.br/" target="_blank">Academia Brasileira de Letras</a></li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>Preparação para Vestibular</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.redacaonline.com.br/" target="_blank">Redação Online</a></li>
+                        <li><a href="https://www.youtube.com/c/ProfessorNoslen" target="_blank">Professor Noslen (YouTube)</a></li>
+                        <li><a href="https://www.portaldaeducacao.com.br/" target="_blank">Portal da Educação</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="fisica" class="subject-section">
+            <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <h2>Física</h2>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <h3>Ensino Médio</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.fisica.ufmg.br/" target="_blank">Departamento de Física UFMG</a></li>
+                        <li><a href="https://www.sofisica.com.br/" target="_blank">Só Física</a></li>
+                        <li><a href="https://www.youtube.com/c/FísicaTotal" target="_blank">Física Total (YouTube)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>Vestibular e Olimpíadas</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.obf.org.br/" target="_blank">Olimpíada Brasileira de Física</a></li>
+                        <li><a href="https://www.youtube.com/c/Física2.0" target="_blank">Física 2.0 (YouTube)</a></li>
+                        <li><a href="https://www.if.ufrgs.br/" target="_blank">Instituto de Física UFRGS</a></li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>Física Moderna</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.sbfisica.org.br/" target="_blank">Sociedade Brasileira de Física</a></li>
+                        <li><a href="https://www.cbpf.br/" target="_blank">Centro Brasileiro de Pesquisas Físicas</a></li>
+                        <li><a href="https://www.youtube.com/c/MinistériodaCiênciaTecnologiaeInovações" target="_blank">Ministério da Ciência (YouTube)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="geografia" class="subject-section">
+            <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <h2>Geografia</h2>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <h3>Geografia Geral</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.ibge.gov.br/" target="_blank">IBGE</a></li>
+                        <li><a href="https://www.sogeografia.com.br/" target="_blank">Só Geografia</a></li>
+                        <li><a href="https://www.nationalgeographicbrasil.com/" target="_blank">National Geographic</a></li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>Geografia do Brasil</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.ipea.gov.br/" target="_blank">IPEA</a></li>
+                        <li><a href="https://www.mma.gov.br/" target="_blank">Ministério do Meio Ambiente</a></li>
+                        <li><a href="https://www.embrapa.br/" target="_blank">Embrapa</a></li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>Atualidades e Vestibular</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.bbc.com/portuguese" target="_blank">BBC News Brasil</a></li>
+                        <li><a href="https://www.youtube.com/c/GeografiaComProfRafael" target="_blank">Geografia com Prof. Rafael (YouTube)</a></li>
+                        <li><a href="https://www.revistaplaneta.com.br/" target="_blank">Revista Planeta</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="historia" class="subject-section">
+            <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <h2>História</h2>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <h3>História Geral</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.historiadomundo.com.br/" target="_blank">História do Mundo</a></li>
+                        <li><a href="https://www.historia.seed.pr.gov.br/" target="_blank">Portal da História (PR)</a></li>
+                        <li><a href="https://www.youtube.com/c/HistóriaOnline" target="_blank">História Online (YouTube)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>História do Brasil</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.brasiliana.usp.br/" target="_blank">Brasiliana USP</a></li>
+                        <li><a href="https://www.fgv.br/cpdoc/" target="_blank">CPDOC FGV</a></li>
+                        <li><a href="https://www.youtube.com/c/BrasilianaUSP" target="_blank">Brasiliana USP (YouTube)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>Arqueologia e Culturas Antigas</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.museunacional.ufrj.br/" target="_blank">Museu Nacional UFRJ</a></li>
+                        <li><a href="https://www.museu.arq.br/" target="_blank">Museu de Arqueologia</a></li>
+                        <li><a href="https://www.youtube.com/c/ArqueologiaemAção" target="_blank">Arqueologia em Ação (YouTube)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="ciencias" class="subject-section">
+            <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <h2>Ciências</h2>
+            <div class="subject-grid">
+                <div class="subject-card">
+                    <h3>Ciências Naturais</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.ciencianautas.com.br/" target="_blank">Ciência Nautas</a></li>
+                        <li><a href="https://www.fiocruz.br/" target="_blank">Fiocruz</a></li>
+                        <li><a href="https://www.youtube.com/c/CiênciaTodoDia" target="_blank">Ciência Todo Dia (YouTube)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>Biologia</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.biologianet.com/" target="_blank">Biologia Net</a></li>
+                        <li><a href="https://www.sbbq.org.br/" target="_blank">Sociedade Brasileira de Bioquímica</a></li>
+                        <li><a href="https://www.youtube.com/c/BiologiaComSamuelCunha" target="_blank">Biologia com Samuel Cunha (YouTube)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3>Química</h3>
+                    <ul class="resource-list">
+                        <li><a href="https://www.soquimica.com.br/" target="_blank">Só Química</a></li>
+                        <li><a href="https://www.abq.org.br/" target="_blank">Associação Brasileira de Química</a></li>
+                        <li><a href="https://www.youtube.com/c/QuímicaemAção" target="_blank">Química em Ação (YouTube)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="#">Sobre</a>
+            <a href="#">Contato</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Política de Privacidade</a>
+        </div>
+        <div class="copyright">
+            &copy; 2025 EduFontes - Todos os direitos reservados
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Seleciona todos os links de navegação
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Adiciona evento de clique a cada link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove a classe 'active' de todos os links
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    
+                    // Adiciona a classe 'active' apenas ao link clicado
+                    this.classList.add('active');
+                    
+                    // Obtém a seção que deve ser mostrada
+                    const sectionToShow = this.getAttribute('data-section');
+                    
+                    // Esconde todas as seções
+                    document.querySelectorAll('.subject-section, .intro-section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Mostra apenas a seção selecionada
+                    if (sectionToShow === 'intro') {
+                        document.querySelector('.intro-section').style.display = 'block';
+                    } else {
+                        document.getElementById(sectionToShow).style.display = 'block';
+                    }
+
+                    // Rolagem suave para o topo
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Adiciona evento de clique aos botões de voltar
+            document.querySelectorAll('.back-button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove a classe 'active' de todos os links
+                    navLinks.forEach(navLink => {
+                        navLink.classList.remove('active');
+                    });
+                    
+                    // Ativa o link "Início"
+                    document.querySelector('.nav-link[data-section="intro"]').classList.add('active');
+                    
+                    // Esconde todas as seções
+                    document.querySelectorAll('.subject-section, .intro-section').forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Mostra a seção de introdução
+                    document.querySelector('.intro-section').style.display = 'block';
+
+                    // Rolagem suave para o topo
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Mostra a introdução por padrão
+            document.querySelector('.intro-section').style.display = 'block';
+            document.querySelector('.nav-link[data-section="intro"]').classList.add('active');
+        });
+    </script>
+</body>
+</html>
