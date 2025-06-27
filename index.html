@@ -26,26 +26,27 @@
         header {
             background-color: #2c3e50;
             color: white;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .logo {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
             font-weight: 700;
         }
         
         .slogan {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.9;
+            margin-bottom: 0.5rem;
         }
         
         /* Navegação */
         nav {
             background-color: #34495e;
-            padding: 1rem 0;
+            padding: 0.8rem 0;
         }
         
         nav ul {
@@ -56,7 +57,7 @@
         }
         
         nav ul li {
-            margin: 0 1rem;
+            margin: 0 0.8rem;
         }
         
         nav ul li a {
@@ -66,6 +67,7 @@
             padding: 0.5rem 1rem;
             border-radius: 4px;
             transition: background-color 0.3s;
+            font-size: 1.05rem;
         }
         
         nav ul li a:hover, nav ul li a.active {
@@ -91,14 +93,22 @@
         
         h1 {
             color: #2c3e50;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 2.2rem;
         }
         
         h2 {
             color: #3498db;
-            margin: 2rem 0 1rem;
+            margin: 2.5rem 0 1.2rem;
             border-bottom: 2px solid #3498db;
             padding-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
         }
 
         /* Página Inicial */
@@ -116,6 +126,9 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .feature-card:hover {
@@ -134,10 +147,26 @@
             margin-bottom: 1rem;
         }
         
+        .feature-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: auto;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+
+        .feature-button:hover {
+            background-color: #2980b9;
+        }
+        
         /* Seções de Matérias */
         .subject-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 colunas lado a lado */
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
             margin-bottom: 3rem;
         }
@@ -148,17 +177,12 @@
             padding: 1.5rem;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
         }
         
         .subject-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .subject-card h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
         }
         
         .resource-list {
@@ -194,15 +218,181 @@
             display: inline-block;
             background-color: #3498db;
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 4px;
             text-decoration: none;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             transition: background-color 0.3s;
+            font-weight: 500;
         }
 
         .back-button:hover {
             background-color: #2980b9;
+        }
+        
+        /* Página de Matérias */
+        .subjects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .subject-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+            cursor: pointer;
+            height: 100%;
+        }
+        
+        .subject-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #f9f9f9;
+        }
+        
+        .subject-icon {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            color: #3498db;
+        }
+        
+        /* Página Como Pesquisar */
+        .research-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .tip-card {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .tip-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #eef7ff;
+        }
+        
+        .tip-card h4 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        .do-dont {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .do, .dont {
+            flex: 1;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .do {
+            background-color: #e8f4f8;
+            border-left: 4px solid #2ecc71;
+        }
+        
+        .dont {
+            background-color: #fce8e6;
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .do h4, .dont h4 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .do h4:before {
+            content: "✓";
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        
+        .dont h4:before {
+            content: "✗";
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #3498db, transparent);
+            margin: 3rem 0;
+        }
+        
+        .content-spacer {
+            margin-bottom: 2rem;
+        }
+        
+        /* Página Como Reutilizar */
+        .reuse-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .reuse-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+        }
+        
+        .reuse-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border-left: 4px solid #9b59b6;
+        }
+        
+        .reuse-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #f5f0f9;
+        }
+        
+        .reuse-card h4 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .reuse-card h4:before {
+            content: "♻️";
         }
         
         /* Rodapé */
@@ -219,16 +409,17 @@
             justify-content: center;
             margin-bottom: 1rem;
             flex-wrap: wrap;
+            gap: 1.5rem;
         }
         
         .footer-links a {
             color: white;
-            margin: 0 1rem;
             text-decoration: none;
+            transition: opacity 0.3s;
         }
         
         .footer-links a:hover {
-            text-decoration: underline;
+            opacity: 0.8;
         }
         
         .copyright {
@@ -237,27 +428,60 @@
         }
         
         /* Responsividade */
+        @media (max-width: 1024px) {
+            .subject-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .subjects-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
         @media (max-width: 768px) {
             .logo {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             nav ul {
                 flex-direction: column;
                 align-items: center;
+                gap: 0.5rem;
             }
             
             nav ul li {
-                margin: 0.5rem 0;
+                margin: 0.3rem 0;
             }
             
-            .subject-grid, .features {
+            .subject-grid, .features, .tips-grid, .do-dont, .reuse-grid, .subjects-container {
                 grid-template-columns: 1fr;
+            }
+            
+            .do-dont {
+                flex-direction: column;
+            }
+            
+            .subject-grid {
+                gap: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .subjects-container {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         /* Esconder seções inicialmente */
-        .subject-section {
+        .subject-section, .research-section, .reuse-section {
             display: none;
         }
 
@@ -276,16 +500,14 @@
     <nav>
         <ul>
             <li><a href="#" class="nav-link" data-section="intro">Início</a></li>
-            <li><a href="#" class="nav-link" data-section="matematica">Matemática</a></li>
-            <li><a href="#" class="nav-link" data-section="portugues">Português</a></li>
-            <li><a href="#" class="nav-link" data-section="fisica">Física</a></li>
-            <li><a href="#" class="nav-link" data-section="geografia">Geografia</a></li>
-            <li><a href="#" class="nav-link" data-section="historia">História</a></li>
-            <li><a href="#" class="nav-link" data-section="ciencias">Ciências</a></li>
+            <li><a href="#" class="nav-link" data-section="materias">Matérias</a></li>
+            <li><a href="#" class="nav-link" data-section="como-pesquisar">Como Pesquisar</a></li>
+            <li><a href="#" class="nav-link" data-section="como-reutilizar">Como Reutilizar</a></li>
         </ul>
     </nav>
     
     <div class="container">
+        <!-- Página Inicial -->
         <section class="intro-section">
             <div class="intro">
                 <h1>Encontre fontes confiáveis para suas matérias escolares</h1>
@@ -294,27 +516,209 @@
 
             <div class="features">
                 <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Como procurar fontes</h3>
+                    <p>Aprenda a identificar fontes confiáveis para suas pesquisas escolares com nosso guia prático.</p>
+                    <a href="#" class="feature-button nav-link" data-section="como-pesquisar">Ver Guia</a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">♻️</div>
+                    <h3>Como reutilizar materiais antigos</h3>
+                    <p>Descubra maneiras criativas de reaproveitar seus materiais escolares e economizar recursos.</p>
+                    <a href="#" class="feature-button nav-link" data-section="como-reutilizar">Ver Dicas</a>
+                </div>
+                
+                <div class="feature-card">
                     <div class="feature-icon">📚</div>
-                    <h3>Recursos Verificados</h3>
-                    <p>Todos os materiais são avaliados por professores e especialistas em educação antes de serem recomendados.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Organizado por Matérias</h3>
-                    <p>Conteúdo categorizado por disciplinas e níveis de ensino para facilitar sua busca.</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">💡</div>
-                    <h3>Atualizações Constantes</h3>
-                    <p>Nossa equipe mantém o site sempre atualizado com os melhores recursos disponíveis.</p>
+                    <h3>Exemplos de materiais</h3>
+                    <p>Explore nossa seleção de materiais educacionais confiáveis organizados por matérias.</p>
+                    <a href="#" class="feature-button nav-link" data-section="materias">Ver Matérias</a>
                 </div>
             </div>
         </section>
         
-        <section id="matematica" class="subject-section">
+        <!-- Página de Matérias -->
+        <section id="materias" class="subject-section">
             <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <h2>Todas as Matérias Disponíveis</h2>
+            <p>Selecione uma matéria para ver nossas recomendações de fontes confiáveis:</p>
+            
+            <div class="subjects-container">
+                <div class="subject-item" data-section="matematica">
+                    <div class="subject-icon">∫</div>
+                    <h3>Matemática</h3>
+                </div>
+                
+                <div class="subject-item" data-section="portugues">
+                    <div class="subject-icon">📝</div>
+                    <h3>Português</h3>
+                </div>
+                
+                <div class="subject-item" data-section="fisica">
+                    <div class="subject-icon">⚛️</div>
+                    <h3>Física</h3>
+                </div>
+                
+                <div class="subject-item" data-section="geografia">
+                    <div class="subject-icon">🌍</div>
+                    <h3>Geografia</h3>
+                </div>
+                
+                <div class="subject-item" data-section="historia">
+                    <div class="subject-icon">📜</div>
+                    <h3>História</h3>
+                </div>
+                
+                <div class="subject-item" data-section="ciencias">
+                    <div class="subject-icon">🔬</div>
+                    <h3>Ciências</h3>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Página Como Pesquisar -->
+        <section id="como-pesquisar" class="research-section">
+            <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <h2>Como Pesquisar Fontes Confiáveis</h2>
+            <p>Encontrar fontes confiáveis online é essencial para um aprendizado de qualidade. Siga estas orientações para identificar recursos educacionais de confiança:</p>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>Verifique a Credibilidade</h4>
+                    <p>Busque informações sobre o autor ou instituição responsável pelo conteúdo. Fontes acadêmicas, governamentais e de organizações reconhecidas geralmente são mais confiáveis.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>Analise a Atualização</h4>
+                    <p>Verifique a data de publicação ou última atualização. Em áreas como ciência e tecnologia, informações recentes são fundamentais para precisão.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>Procure Referências</h4>
+                    <p>Bons conteúdos citam suas fontes. Verifique se as referências são de qualidade e se o autor fornece links para as fontes originais.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <h4>Avalie a Objetividade</h4>
+                    <p>Conteúdos educacionais devem apresentar informações de forma neutra e factual, sem viés ideológico ou comercial evidente.</p>
+                </div>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <h3>O que fazer e o que evitar</h3>
+            
+            <div class="do-dont">
+                <div class="do">
+                    <h4>O que fazer</h4>
+                    <ul>
+                        <li>Priorize sites de universidades e instituições educacionais</li>
+                        <li>Verifique o domínio do site (.edu, .gov, .org)</li>
+                        <li>Consulte múltiplas fontes para confirmar informações</li>
+                        <li>Busque artigos revisados por pares</li>
+                        <li>Utilize bibliotecas digitais e repositórios acadêmicos</li>
+                    </ul>
+                </div>
+                
+                <div class="dont">
+                    <h4>O que evitar</h4>
+                    <ul>
+                        <li>Sites sem informações sobre os autores</li>
+                        <li>Conteúdos com muitos anúncios ou pop-ups</li>
+                        <li>Informações sem data de publicação</li>
+                        <li>Fontes com erros gramaticais ou ortográficos</li>
+                        <li>Sites que promovem produtos ou ideias específicas</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <div class="content-spacer">
+                <h3>Métodos de Pesquisa Eficientes</h3>
+                <p>Para otimizar sua pesquisa:</p>
+                <ul>
+                    <li><strong>Use palavras-chave específicas</strong>: Em vez de "matemática", pesquise por "frações ensino fundamental"</li>
+                    <li><strong>Utilize operadores de busca</strong>: Use aspas para frases exatas ("teorema de Pitágoras")</li>
+                    <li><strong>Filtre por tipo de conteúdo</strong>: Em mecanismos de busca, use filtros para PDFs, apresentações ou vídeos</li>
+                    <li><strong>Consulte bibliotecas digitais</strong>: SciELO, Google Acadêmico, JSTOR</li>
+                    <li><strong>Participe de fóruns educacionais</strong>: Comunidades podem recomendar recursos confiáveis</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Página Como Reutilizar -->
+        <section id="como-reutilizar" class="reuse-section">
+            <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <h2>Como Reutilizar Materiais Escolares</h2>
+            <p>Reutilizar materiais escolares é uma prática sustentável e econômica. Veja como dar nova vida aos seus recursos educacionais:</p>
+            
+            <div class="reuse-grid">
+                <div class="reuse-card">
+                    <h4>Cadernos Parcialmente Usados</h4>
+                    <p>Remova as páginas utilizadas e encaderne as folhas restantes para criar um novo caderno de rascunho ou para anotações.</p>
+                </div>
+                
+                <div class="reuse-card">
+                    <h4>Livros Didáticos</h4>
+                    <p>Doe para bibliotecas comunitárias, escolas ou estudantes que possam beneficiar-se do material. Você também pode criar um sistema de troca com colegas.</p>
+                </div>
+                
+                <div class="reuse-card">
+                    <h4>Materiais de Artes</h4>
+                    <p>Lápis de cor, canetinhas e tintas podem ser compartilhados em grupos de estudo. Crie kits coletivos para uso comunitário.</p>
+                </div>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <div class="content-spacer">
+                <h3>Dicas para Reutilização Criativa</h3>
+                
+                <div class="do-dont">
+                    <div class="do">
+                        <h4>O que fazer</h4>
+                        <ul>
+                            <li>Transforme folhas usadas em blocos de anotações</li>
+                            <li>Crie marcadores de página com restos de papel colorido</li>
+                            <li>Use envelopes antigos para organizar flashcards</li>
+                            <li>Faça capas personalizadas para cadernos com papel de presente</li>
+                            <li>Reutilize pastas plásticas como organizadores de matérias</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="dont">
+                        <h4>O que evitar</h4>
+                        <ul>
+                            <li>Descartar materiais que ainda têm utilidade</li>
+                            <li>Comprar novos itens sem verificar o que já possui</li>
+                            <li>Ignorar a possibilidade de reparos em materiais danificados</li>
+                            <li>Esquecer de higienizar materiais antes de reutilizar</li>
+                            <li>Desconsiderar opções de compartilhamento comunitário</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <div class="content-spacer">
+                <h3>Benefícios da Reutilização</h3>
+                <p>Além da economia financeira, reutilizar materiais escolares traz diversos benefícios:</p>
+                <ul>
+                    <li><strong>Sustentabilidade ambiental</strong>: Reduz o consumo de recursos naturais e a geração de resíduos</li>
+                    <li><strong>Desenvolvimento da criatividade</strong>: Encoraja soluções inovadoras para o uso de materiais</li>
+                    <li><strong>Consciência de consumo</strong>: Ensina a valorizar recursos e evitar desperdícios</li>
+                    <li><strong>Solidariedade comunitária</strong>: Materiais em bom estado podem ajudar outros estudantes</li>
+                    <li><strong>Organização pessoal</strong>: O processo de reutilização incentiva melhores hábitos de organização</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Seções de Matérias Específicas -->
+        <section id="matematica" class="subject-section">
+            <a href="#" class="back-button" data-section="materias">← Voltar para Matérias</a>
             <h2>Matemática</h2>
             <div class="subject-grid">
                 <div class="subject-card">
@@ -347,7 +751,7 @@
         </section>
         
         <section id="portugues" class="subject-section">
-            <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <a href="#" class="back-button" data-section="materias">← Voltar para Matérias</a>
             <h2>Português</h2>
             <div class="subject-grid">
                 <div class="subject-card">
@@ -380,7 +784,7 @@
         </section>
         
         <section id="fisica" class="subject-section">
-            <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <a href="#" class="back-button" data-section="materias">← Voltar para Matérias</a>
             <h2>Física</h2>
             <div class="subject-grid">
                 <div class="subject-card">
@@ -413,7 +817,7 @@
         </section>
         
         <section id="geografia" class="subject-section">
-            <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <a href="#" class="back-button" data-section="materias">← Voltar para Matérias</a>
             <h2>Geografia</h2>
             <div class="subject-grid">
                 <div class="subject-card">
@@ -446,7 +850,7 @@
         </section>
         
         <section id="historia" class="subject-section">
-            <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <a href="#" class="back-button" data-section="materias">← Voltar para Matérias</a>
             <h2>História</h2>
             <div class="subject-grid">
                 <div class="subject-card">
@@ -479,7 +883,7 @@
         </section>
         
         <section id="ciencias" class="subject-section">
-            <a href="#" class="back-button" data-section="intro">← Voltar para o início</a>
+            <a href="#" class="back-button" data-section="materias">← Voltar para Matérias</a>
             <h2>Ciências</h2>
             <div class="subject-grid">
                 <div class="subject-card">
@@ -514,45 +918,51 @@
     
     <footer>
         <div class="footer-links">
+            <a href="#" data-section="intro">Início</a>
+            <a href="#" data-section="materias">Matérias</a>
+            <a href="#" data-section="como-pesquisar">Como Pesquisar</a>
+            <a href="#" data-section="como-reutilizar">Como Reutilizar</a>
             <a href="#">Sobre</a>
             <a href="#">Contato</a>
-            <a href="#">Termos de Uso</a>
-            <a href="#">Política de Privacidade</a>
         </div>
         <div class="copyright">
-            &copy; 2025 EduFontes - Todos os direitos reservados
+            &copy; 2025 EducaFontes - Todos os direitos reservados
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Seleciona todos os links de navegação
-            const navLinks = document.querySelectorAll('.nav-link');
+            const navLinks = document.querySelectorAll('.nav-link, .footer-links a, .subject-item, .feature-button');
             
             // Adiciona evento de clique a cada link
             navLinks.forEach(link => {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     
-                    // Remove a classe 'active' de todos os links
-                    navLinks.forEach(navLink => {
+                    // Remove a classe 'active' de todos os links de navegação
+                    document.querySelectorAll('.nav-link').forEach(navLink => {
                         navLink.classList.remove('active');
                     });
                     
-                    // Adiciona a classe 'active' apenas ao link clicado
-                    this.classList.add('active');
+                    // Adiciona a classe 'active' apenas ao link clicado (se for do menu principal)
+                    if (this.classList.contains('nav-link')) {
+                        this.classList.add('active');
+                    }
                     
                     // Obtém a seção que deve ser mostrada
                     const sectionToShow = this.getAttribute('data-section');
                     
                     // Esconde todas as seções
-                    document.querySelectorAll('.subject-section, .intro-section').forEach(section => {
+                    document.querySelectorAll('.subject-section, .intro-section, .research-section, .reuse-section').forEach(section => {
                         section.style.display = 'none';
                     });
                     
                     // Mostra apenas a seção selecionada
                     if (sectionToShow === 'intro') {
                         document.querySelector('.intro-section').style.display = 'block';
+                        // Ativa o link "Início" no menu
+                        document.querySelector('.nav-link[data-section="intro"]').classList.add('active');
                     } else {
                         document.getElementById(sectionToShow).style.display = 'block';
                     }
@@ -571,20 +981,27 @@
                     e.preventDefault();
                     
                     // Remove a classe 'active' de todos os links
-                    navLinks.forEach(navLink => {
+                    document.querySelectorAll('.nav-link').forEach(navLink => {
                         navLink.classList.remove('active');
                     });
                     
-                    // Ativa o link "Início"
-                    document.querySelector('.nav-link[data-section="intro"]').classList.add('active');
+                    // Obtém a seção de destino
+                    const targetSection = this.getAttribute('data-section');
+                    
+                    // Ativa o link correspondente
+                    document.querySelector(`.nav-link[data-section="${targetSection}"]`).classList.add('active');
                     
                     // Esconde todas as seções
-                    document.querySelectorAll('.subject-section, .intro-section').forEach(section => {
+                    document.querySelectorAll('.subject-section, .intro-section, .research-section, .reuse-section').forEach(section => {
                         section.style.display = 'none';
                     });
                     
-                    // Mostra a seção de introdução
-                    document.querySelector('.intro-section').style.display = 'block';
+                    // Mostra a seção de destino
+                    if (targetSection === 'intro') {
+                        document.querySelector('.intro-section').style.display = 'block';
+                    } else {
+                        document.getElementById(targetSection).style.display = 'block';
+                    }
 
                     // Rolagem suave para o topo
                     window.scrollTo({
